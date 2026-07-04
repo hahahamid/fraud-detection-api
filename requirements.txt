@@ -11,3 +11,4 @@ websocket-client
 joblib
 pytest
 fakeredis
+requests

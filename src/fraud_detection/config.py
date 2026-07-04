@@ -17,3 +17,4 @@ TRANSACTIONS_CONSUMER_GROUP = "scorer-group"
 SCORED_CHANNEL = "scored_transactions"
 
 API_WS_URL = "ws://localhost:8000/stream"
+API_BASE_URL = "http://localhost:8000"
