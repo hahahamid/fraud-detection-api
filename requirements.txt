@@ -1,0 +1,13 @@
+pandas
+numpy
+scikit-learn
+torch
+redis
+fastapi
+uvicorn[standard]
+httpx
+streamlit
+websocket-client
+joblib
+pytest
+fakeredis
