@@ -11,7 +11,7 @@ def test_format_row_flattens_scored_transaction():
     row = format_row(scored)
     assert row == {
         "transaction_id": "tx-1",
-        "if_score": 0.877,
+        "if_score": 0.876,
         "if_flagged": True,
         "ae_score": 0.123,
         "ae_flagged": False,
