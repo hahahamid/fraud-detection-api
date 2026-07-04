@@ -48,6 +48,8 @@ def test_score_endpoint_returns_combined_result():
         assert body["ensemble_flagged"] is True
         assert body["isolation_forest"]["score"] == 0.9
         assert body["autoencoder"]["score"] == 0.2
+        assert body["amount"] == 10.0
+        assert body["time"] == 100.0
 
 
 def test_score_endpoint_422_on_missing_field():

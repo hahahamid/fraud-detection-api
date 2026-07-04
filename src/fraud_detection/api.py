@@ -66,6 +66,7 @@ def score_endpoint(transaction: TransactionIn):
         transaction.transaction_id or "manual",
         result["if_score"], result["if_flagged"],
         result["ae_score"], result["ae_flagged"],
+        transaction.Amount, transaction.Time,
     )
 
 

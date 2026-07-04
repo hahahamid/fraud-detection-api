@@ -61,3 +61,5 @@ def test_read_and_handle_batch_publishes_combined_result():
     scored = json.loads(message["data"])
     assert scored["transaction_id"] == "tx-1"
     assert scored["ensemble_flagged"] is True
+    assert scored["amount"] == 10.0
+    assert scored["time"] == 100.0

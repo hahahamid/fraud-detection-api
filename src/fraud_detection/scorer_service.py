@@ -58,6 +58,7 @@ def handle_message(message_id, fields, redis_client, scaler, if_model, ae_model,
             transaction_id,
             result["if_score"], result["if_flagged"],
             result["ae_score"], result["ae_flagged"],
+            raw_data["Amount"], raw_data["Time"],
         )
         redis_client.publish(channel_name, json.dumps(scored))
     except Exception:

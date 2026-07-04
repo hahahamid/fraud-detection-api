@@ -35,7 +35,7 @@ def test_producer_to_scorer_round_trip(sample_csv_path, tmp_path):
         message = pubsub.get_message(timeout=1)
         scored = json.loads(message["data"])
         assert set(scored.keys()) == {
-            "transaction_id", "isolation_forest", "autoencoder", "ensemble_flagged",
+            "transaction_id", "amount", "time", "isolation_forest", "autoencoder", "ensemble_flagged",
         }
         assert 0.0 <= scored["isolation_forest"]["score"] <= 1.0
         assert 0.0 <= scored["autoencoder"]["score"] <= 1.0
