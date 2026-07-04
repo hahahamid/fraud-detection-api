@@ -9,6 +9,8 @@ from fraud_detection.config import API_WS_URL
 def format_row(scored: dict) -> dict:
     return {
         "transaction_id": scored["transaction_id"],
+        "amount": round(scored["amount"], 2),
+        "time": scored["time"],
         "if_score": round(scored["isolation_forest"]["score"], 3),
         "if_flagged": scored["isolation_forest"]["flagged"],
         "ae_score": round(scored["autoencoder"]["score"], 3),
