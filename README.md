@@ -12,6 +12,8 @@ dataset, then replays held-out transactions through a Redis Streams
 producer/consumer pipeline, scores them live, and displays results in a
 Streamlit dashboard.
 
+![Live dashboard demo](assets/dashboard-demo.gif)
+
 ## Setup
 
 1. Create and activate a virtual environment, then install dependencies:
