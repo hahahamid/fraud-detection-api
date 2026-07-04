@@ -18,8 +18,9 @@ production use.
    Loads `creditcard.csv`, splits train/test preserving chronological order,
    trains an Isolation Forest and an Autoencoder on legitimate transactions from
    the train split, evaluates both on the held-out test split, and saves model
-   artifacts to `models/` plus a `metrics.json` report (precision/recall/F1/AUC,
-   per-transaction inference latency).
+   artifacts to `models/` plus a `metrics.json` report (precision/recall/AUC,
+   per-transaction inference latency). F1 is used internally to pick each
+   model's flagging threshold but isn't persisted as its own field.
 
 2. **Producer** (`replay_producer.py`)
    Reads the held-out test-split transactions (never seen during training) and
