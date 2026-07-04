@@ -1,5 +1,11 @@
 # Fraud Detection API
 
+![Python](https://img.shields.io/badge/python-3.11%2B-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-009485)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C)
+![scikit--learn](https://img.shields.io/badge/scikit--learn-F7931E)
+![Redis Streams](https://img.shields.io/badge/Redis-Streams-DC382D)
+
 A real-time fraud detection demo inspired by tools like Stripe Radar. Trains
 an Isolation Forest and an Autoencoder on the Kaggle credit card fraud
 dataset, then replays held-out transactions through a Redis Streams
