@@ -1,5 +1,6 @@
 import json
 
+import pandas as pd
 import streamlit as st
 import websocket
 
@@ -17,6 +18,12 @@ def format_row(scored: dict) -> dict:
         "ae_flagged": scored["autoencoder"]["flagged"],
         "ensemble_flagged": scored["ensemble_flagged"],
     }
+
+
+def highlight_flagged_row(row: pd.Series) -> list:
+    if row["ensemble_flagged"]:
+        return ["background-color: #ffcccc"] * len(row)
+    return [""] * len(row)
 
 
 def main():
@@ -40,7 +47,7 @@ def main():
             if row["ensemble_flagged"]:
                 flagged_count += 1
 
-            table_placeholder.dataframe(rows)
+            table_placeholder.dataframe(pd.DataFrame(rows).style.apply(highlight_flagged_row, axis=1))
             stats_placeholder.write(f"Total: {total} | Flagged: {flagged_count}")
     finally:
         ws.close()
